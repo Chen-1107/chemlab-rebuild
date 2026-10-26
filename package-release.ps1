@@ -30,9 +30,7 @@ $required = @(
     'analysis-python\service.py',
     'analysis-python\spectrum.py',
     'analysis-python\notebook.py',
-    'analysis-python\cbridge.py',
-    'app-java\resources\kb.json',
-    'app-java\resources\kb\index.json'
+    'analysis-python\cbridge.py'
 )
 
 $missing = $false
@@ -59,9 +57,6 @@ New-Item -ItemType Directory -Force -Path (Join-Path $stage 'app-java\build\clas
 Copy-Item -Recurse (Join-Path $root 'app-java\build\classes\*') (Join-Path $stage 'app-java\build\classes')
 New-Item -ItemType Directory -Force -Path (Join-Path $stage 'app-java\lib') | Out-Null
 Copy-Item (Join-Path $root 'app-java\lib\sqlite-jdbc-3.46.1.3.jar') (Join-Path $stage 'app-java\lib')
-New-Item -ItemType Directory -Force -Path (Join-Path $stage 'app-java\resources\kb') | Out-Null
-Copy-Item (Join-Path $root 'app-java\resources\kb.json') (Join-Path $stage 'app-java\resources')
-Copy-Item -Recurse (Join-Path $root 'app-java\resources\kb\*') (Join-Path $stage 'app-java\resources\kb')
 
 New-Item -ItemType Directory -Force -Path (Join-Path $stage 'dist\native\Release') | Out-Null
 Copy-Item (Join-Path $root 'dist\native\Release\chemlab_core.dll') (Join-Path $stage 'dist\native\Release')

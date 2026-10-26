@@ -29,8 +29,6 @@ required=(
     "analysis-python/spectrum.py"
     "analysis-python/notebook.py"
     "analysis-python/cbridge.py"
-    "app-java/resources/kb.json"
-    "app-java/resources/kb/index.json"
 )
 
 missing=0
@@ -59,9 +57,6 @@ mkdir -p "$stage/app-java/build/classes"
 cp -r app-java/build/classes/* "$stage/app-java/build/classes/"
 mkdir -p "$stage/app-java/lib"
 cp app-java/lib/sqlite-jdbc-3.46.1.3.jar "$stage/app-java/lib/"
-mkdir -p "$stage/app-java/resources/kb"
-cp app-java/resources/kb.json "$stage/app-java/resources/"
-cp -r app-java/resources/kb/* "$stage/app-java/resources/kb/"
 
 mkdir -p "$stage/dist/native/Release"
 cp dist/native/Release/chemlab_core.dll "$stage/dist/native/Release/"
