@@ -1,0 +1,22 @@
+# 运行时凭据与用户数据，不纳入版本控制
+data/ima.json
+data/obsidian.json
+data/*.log
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# 构建产物
+build-core/
+build-launcher/
+app-java/build/
+demo/build/
+tests/build/
+dist/
+*.exe
+*.dll
+*.class
+
+# Python 缓存
+__pycache__/
+*.pyc
