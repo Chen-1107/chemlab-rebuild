@@ -1,12 +1,8 @@
-# 运行时凭据与用户数据，不纳入版本控制
-data/ima.json
-data/obsidian.json
-data/*.log
-data/*.db
-data/*.db-shm
-data/*.db-wal
+# 运行时凭据、用户数据与日志
+data/
+!data/.gitkeep
 
-# 构建产物
+# 构建产物与分发包
 build-core/
 build-launcher/
 app-java/build/
@@ -16,7 +12,28 @@ dist/
 *.exe
 *.dll
 *.class
+*.exp
+*.lib
+*.obj
 
 # Python 缓存
 __pycache__/
 *.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# 受版权保护的教材内容（正文、索引、演示幻灯片）
+app-java/resources/kb.json
+app-java/resources/kb/*.txt
+app-java/resources/kb/*.toc.json
+app-java/resources/kb/books.json
+app-java/resources/kb/index.json
+demo/media/
+demo/obsidian-vault/ChemLab/知识库/
+
+# 打包临时目录
+dist/release/.stage/
